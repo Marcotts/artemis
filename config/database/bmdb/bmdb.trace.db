@@ -1,0 +1,2066 @@
+2022-01-06 22:17:48 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE USER[*]\000d\000a(\000d\000a    ID            NUMBER(38, 0) NOT NULL,\000d\000a    FIRST_NAME    VARCHAR2(255),\000d\000a    LAST_NAME     VARCHAR2(255),\000d\000a    EMAIL         VARCHAR2(255),\000d\000a    PASSWORD      VARCHAR2(255),\000d\000a    APP_USER_ROLE VARCHAR2(255),\000d\000a    LOCKED        NUMBER(1),\000d\000a    ENABLED       NUMBER(1),\000d\000a    CONSTRAINT PK_USER PRIMARY KEY (ID)\000d\000a)"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE USER[*]\000d\000a(\000d\000a    ID            NUMBER(38, 0) NOT NULL,\000d\000a    FIRST_NAME    VARCHAR2(255),\000d\000a    LAST_NAME     VARCHAR2(255),\000d\000a    EMAIL         VARCHAR2(255),\000d\000a    PASSWORD      VARCHAR2(255),\000d\000a    APP_USER_ROLE VARCHAR2(255),\000d\000a    LOCKED        NUMBER(1),\000d\000a    ENABLED       NUMBER(1),\000d\000a    CONSTRAINT PK_USER PRIMARY KEY (ID)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE user
+(
+    id            NUMBER(38, 0) NOT NULL,
+    first_name    VARCHAR2(255),
+    last_name     VARCHAR2(255),
+    email         VARCHAR2(255),
+    password      VARCHAR2(255),
+    app_user_role VARCHAR2(255),
+    locked        NUMBER(1),
+    enabled       NUMBER(1),
+    CONSTRAINT pk_user PRIMARY KEY (id)
+) [42001-206]
+2022-01-06 22:28:57 jdbc[16]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "DROP TABLE USER[*]"; attendu "identifier"
+Syntax error in SQL statement "DROP TABLE USER[*]"; expected "identifier"; SQL statement:
+drop table USER [42001-206]
+2022-01-06 22:35:42 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "DROP USER[*]"; attendu "identifier"
+Syntax error in SQL statement "DROP USER[*]"; expected "identifier"; SQL statement:
+drop user [42001-206]
+2022-01-06 22:35:54 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "DROP TABLE USER[*]"; attendu "identifier"
+Syntax error in SQL statement "DROP TABLE USER[*]"; expected "identifier"; SQL statement:
+drop table user [42001-206]
+2022-01-08 18:52:09 jdbc[236]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-01-09 12:59:06 jdbc[297]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-01-10 17:34:05 jdbc[308]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-18 11:09:06 jdbc[5]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-18 11:09:06 jdbc[5]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-18 20:50:30 jdbc[273]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-18 20:50:30 jdbc[273]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-18 20:51:05 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading TousLesFilms.csv"
+IO Exception: "IOException reading TousLesFilms.csv"; SQL statement:
+Select * from CSVREAD('TousLesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: TousLesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:51:29 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading ../TousLesFilms.csv"
+IO Exception: "IOException reading ../TousLesFilms.csv"; SQL statement:
+Select * from CSVREAD('../TousLesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: ../TousLesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:51:39 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading ../../TousLesFilms.csv"
+IO Exception: "IOException reading ../../TousLesFilms.csv"; SQL statement:
+Select * from CSVREAD('../../TousLesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: ../../TousLesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:51:43 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading ../../TousLesFilms.csv"
+IO Exception: "IOException reading ../../TousLesFilms.csv"; SQL statement:
+Select * from CSVREAD('../../TousLesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: ../../TousLesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:52:56 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading TouslesFilms.csv"
+IO Exception: "IOException reading TouslesFilms.csv"; SQL statement:
+Select * from CSVREAD('TouslesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: TouslesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:53:04 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading ../TouslesFilms.csv"
+IO Exception: "IOException reading ../TouslesFilms.csv"; SQL statement:
+Select * from CSVREAD('../TouslesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: ../TouslesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 20:53:13 jdbc[273]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading ../../TouslesFilms.csv"
+IO Exception: "IOException reading ../../TouslesFilms.csv"; SQL statement:
+Select * from CSVREAD('../../TouslesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1101)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: ../../TouslesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 24 more
+2023-06-18 22:37:16 jdbc[317]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-19 17:14:25 jdbc[340]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-19 17:23:47 jdbc[340]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM RESUME  WHERE ""Titre Français"" LIKE '%Dexter%'\000d\000a\000d\000aSELECT[*] * FROM SERIES1"
+Syntax error in SQL statement "SELECT * FROM RESUME  WHERE ""Titre Français"" LIKE '%Dexter%'\000d\000a\000d\000aSELECT[*] * FROM SERIES1"; SQL statement:
+SELECT * FROM RESUME  where "Titre Français" like '%Dexter%'
+
+Select * from SERIES1 [42000-206]
+2023-06-26 13:06:24 jdbc[462]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-06-26 13:08:06 jdbc[462]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS \000d\000a  ORDER BY[*] “TITRE FRANÇAIS”"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS \000d\000a  ORDER BY[*] “TITRE FRANÇAIS”"; SQL statement:
+SELECT * FROM TOUSLESFILMS 
+  Order by “Titre Français” [42000-206]
+2023-06-26 13:08:25 jdbc[462]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS \000d\000a  ORDER BY[*] ‘TITRE FRANÇAIS’"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS \000d\000a  ORDER BY[*] ‘TITRE FRANÇAIS’"; SQL statement:
+SELECT * FROM TOUSLESFILMS 
+  Order by ‘Titre Français’ [42000-206]
+2023-08-02 23:08:09 jdbc[1248]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-09-04 17:09:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:10:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrancais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:10:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrancais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:10:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrancais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:10:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrancais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:11:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANÇAIS" non trouvée
+Column "TITREFRANÇAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrançais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:11:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANÇAIS" non trouvée
+Column "TITREFRANÇAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where  TitreFrançais  like '%71 - Into the fire%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:19:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS a where a.titrefrancais = '65 - La Terre d'Avant[*]'"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS a where a.titrefrancais = '65 - La Terre d'Avant[*]'"; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a.titrefrancais = '65 - La Terre d'Avant' [42000-206]
+2023-09-04 17:19:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "A.TITREFRANCAIS" non trouvée
+Column "A.TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a.titrefrancais = "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:20:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS A WHERE A.""titrefrancais ""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS A WHERE A.""titrefrancais ""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."titrefrancais "= "65 - La Terre d'Avant"
+
+
+TitreFrancais [42000-206]
+2023-09-04 17:20:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS A WHERE A.""titrefrancais""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS A WHERE A.""titrefrancais""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."titrefrancais"= "65 - La Terre d'Avant"
+
+
+TitreFrancais [42000-206]
+2023-09-04 17:20:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS A WHERE A.""TitreFrancais""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS A WHERE A.""TitreFrancais""= ""65 - La Terre d'Avant""\000d\000a\000d\000a\000d\000aTITREFRANCAIS[*]"; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."TitreFrancais"= "65 - La Terre d'Avant"
+
+
+TitreFrancais [42000-206]
+2023-09-04 17:20:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "65 - La Terre d'Avant" non trouvée
+Column "65 - La Terre d'Avant" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."TitreFrancais"= "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:20:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "65 - La Terre d'Avant" non trouvée
+Column "65 - La Terre d'Avant" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."TitreFrancais"= "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:20:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "A.TitreFrancais " non trouvée
+Column "A.TitreFrancais " not found; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a."TitreFrancais "= "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:21:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM TOUSLESFILMS A WHERE A.'TitreFrancais '[*]= ""65 - La Terre d'Avant"""; attendu "identifier"
+Syntax error in SQL statement "SELECT * FROM TOUSLESFILMS A WHERE A.'TitreFrancais '[*]= ""65 - La Terre d'Avant"""; expected "identifier"; SQL statement:
+SELECT * FROM TOUSLESFILMS a where a.'TitreFrancais '= "65 - La Terre d'Avant" [42001-206]
+2023-09-04 17:21:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "65 - La Terre d'Avant" non trouvée
+Column "65 - La Terre d'Avant" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "TitreFrancais"= "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:21:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "65 - La Terre d'Avant" non trouvée
+Column "65 - La Terre d'Avant" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "TitreFrancais" = "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:23:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TitreFrancais " non trouvée
+Column "TitreFrancais " not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "TitreFrancais " = "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:23:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TitreFrançais " non trouvée
+Column "TitreFrançais " not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "TitreFrançais " = "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:23:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TitreFrançais" non trouvée
+Column "TitreFrançais" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "TitreFrançais" = "65 - La Terre d'Avant" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:139)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:25:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where titrefrancais like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:26:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TITREFRANCAIS like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:29:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "DISQUEFRANCAIS" non trouvée
+Column "DISQUEFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where disquefrancais like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:29:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "disquefrancais" non trouvée
+Column "disquefrancais" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "disquefrancais" like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:29:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "note" non trouvée
+Column "note" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where "note" like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 17:30:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "TITREFRANCAIS" non trouvée
+Column "TITREFRANCAIS" not found; SQL statement:
+SELECT * FROM TOUSLESFILMS  where TitreFrancais  like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 18:19:45 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*] LIKE ""%"""
+Syntax error in SQL statement "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*] LIKE ""%"""; SQL statement:
+select * from series1 where titre français like "%" [42000-206]
+2023-09-04 18:20:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*] LIKE '%'"
+Syntax error in SQL statement "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*] LIKE '%'"; SQL statement:
+select * from series1 where titre français like '%' [42000-206]
+2023-09-04 18:20:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "titre français" non trouvée
+Column "titre français" not found; SQL statement:
+select * from series1 where "titre français" like '%' [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 18:20:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "titre français" non trouvée
+Column "titre français" not found; SQL statement:
+select * from series1 where "titre français" like "%" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 18:21:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*]  LIKE ""%"""
+Syntax error in SQL statement "SELECT * FROM SERIES1 WHERE TITRE FRANÇAIS[*]  LIKE ""%"""; SQL statement:
+select * from series1 where titre français  like "%" [42000-206]
+2023-09-04 18:21:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "NOTE" non trouvée
+Column "NOTE" not found; SQL statement:
+select * from series1 where note  like "%" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:149)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 18:22:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM SERIES1 WHERE DISQUE ANGLAIS[*]   LIKE ""%"""
+Syntax error in SQL statement "SELECT * FROM SERIES1 WHERE DISQUE ANGLAIS[*]   LIKE ""%"""; SQL statement:
+select * from series1 where disque anglais   like "%" [42000-206]
+2023-09-04 18:22:52 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "%" non trouvée
+Column "%" not found; SQL statement:
+select * from series1 where pochette   like "%" [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.CompareLike.optimize(CompareLike.java:150)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:147)
+	at org.h2.command.query.Select.prepare(Select.java:1184)
+	at org.h2.command.Parser.prepareCommand(Parser.java:971)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-09-04 18:23:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SELECT * FROM SERIES1 WHERE TITRE ANGLAIS[*]   LIKE '%'"
+Syntax error in SQL statement "SELECT * FROM SERIES1 WHERE TITRE ANGLAIS[*]   LIKE '%'"; SQL statement:
+select * from series1 where titre anglais   like '%' [42000-206]
+2023-10-13 22:52:11 database: wrong user or password; user: ""
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:175)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:529)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 8 more
+2023-10-13 22:52:11 database: wrong user or password; user: ""
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:175)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:529)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 8 more
+2023-11-06 08:57:44 jdbc[4]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-11-06 08:58:36 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "IOException reading TousLesFilms.csv"
+IO Exception: "IOException reading TousLesFilms.csv"; SQL statement:
+CREATE TABLE TousLesFilms2 AS SELECT * FROM CSVREAD('TousLesFilms.csv') [90028-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.tools.Csv.convertException(Csv.java:577)
+	at org.h2.tools.Csv.read(Csv.java:184)
+	at org.h2.expression.function.table.CSVReadFunction.getValueTemplate(CSVReadFunction.java:95)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:25)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:10384)
+	at org.h2.command.Parser.parseCreate(Parser.java:7811)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1140)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.nio.file.NoSuchFileException: TousLesFilms.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+	at org.h2.store.fs.disk.FilePathDisk.newInputStream(FilePathDisk.java:394)
+	at org.h2.store.fs.FileUtils.newInputStream(FileUtils.java:263)
+	at org.h2.tools.Csv.initRead(Csv.java:303)
+	at org.h2.tools.Csv.readResultSet(Csv.java:207)
+	at org.h2.tools.Csv.read(Csv.java:182)
+	... 26 more
+2023-11-06 13:12:25 jdbc[5]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-11-06 13:12:25 jdbc[5]: null
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2023-11-06 13:12:37 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE Serie12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"
+Syntax error in SQL statement "CREATE TABLE Serie12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"; SQL statement:
+CREATE TABLE Serie12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv'); [42000-206]
+2023-11-06 13:13:58 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv'); [42000-206]
+2023-11-06 13:13:59 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]');"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv'); [42000-206]
+2023-11-06 13:14:15 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]')"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv[*]')"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv') [42000-206]
+2023-11-06 13:17:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘Series1.csv[*]')"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘Series1.csv[*]')"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘Series1.csv') [42000-206]
+2023-11-06 13:17:56 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms2.csv[*]');"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms2.csv[*]');"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms2.csv'); [42000-206]
+2023-11-06 13:19:27 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIE12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv’) [42000-206]
+2023-11-06 13:19:55 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIETEST AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIETEST AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIEtest AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv’) [42000-206]
+2023-11-06 13:21:23 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv’) [42000-206]
+2023-11-06 13:24:33 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "~/database/bmdb/Series1.csv" non trouvée
+Column "~/database/bmdb/Series1.csv" not found; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD("~/database/bmdb/Series1.csv") [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.function.table.TableFunction.optimize(TableFunction.java:73)
+	at org.h2.expression.function.table.CSVReadFunction.optimize(CSVReadFunction.java:65)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:24)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:10384)
+	at org.h2.command.Parser.parseCreate(Parser.java:7811)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1140)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-11-06 13:25:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(~[*]/DATABASE/BMDB/SERIES1.CSV)"; attendu "INDEX, ), NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(~[*]/DATABASE/BMDB/SERIES1.CSV)"; expected "INDEX, ), NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(~/database/bmdb/Series1.csv) [42001-206]
+2023-11-06 13:29:12 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Colonne "~/database/bmdb/Series1.csv" non trouvée
+Column "~/database/bmdb/Series1.csv" not found; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD("~/database/bmdb/Series1.csv") [42122-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.function.table.TableFunction.optimize(TableFunction.java:73)
+	at org.h2.expression.function.table.CSVReadFunction.optimize(CSVReadFunction.java:65)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:24)
+	at org.h2.command.Parser.readTableFilter(Parser.java:2199)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:3102)
+	at org.h2.command.Parser.parseSelect(Parser.java:3220)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:3092)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2930)
+	at org.h2.command.Parser.parseQuery(Parser.java:2900)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:10384)
+	at org.h2.command.Parser.parseCreate(Parser.java:7811)
+	at org.h2.command.Parser.parsePrepared(Parser.java:1140)
+	at org.h2.command.Parser.parse(Parser.java:1068)
+	at org.h2.command.Parser.parse(Parser.java:1037)
+	at org.h2.command.Parser.prepareCommand(Parser.java:965)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:624)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:562)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1335)
+	at org.h2.server.web.WebApp.query(WebApp.java:1133)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1099)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1086)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-11-06 13:29:42 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv’) [42000-206]
+2023-11-06 13:29:43 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘~/DATABASE/BMDB/SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(‘~/database/bmdb/Series1.csv’) [42000-206]
+2023-11-06 13:29:56 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘./SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘./SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(‘./Series1.csv’) [42000-206]
+2023-11-06 13:30:32 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘SERIES1.CSV’)"
+Syntax error in SQL statement "CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD([*]‘SERIES1.CSV’)"; SQL statement:
+CREATE TABLE SERIES12 AS SELECT * FROM CSVREAD(‘Series1.csv’) [42000-206]
+2023-11-06 13:44:51 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE TousLesFilms AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms.csv[*]');"
+Syntax error in SQL statement "CREATE TABLE TousLesFilms AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms.csv[*]');"; SQL statement:
+CREATE TABLE TousLesFilms AS SELECT * FROM CSVREAD(‘~/database/bmdb/TousLesFilms.csv'); [42000-206]
+2023-11-06 16:31:25 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.message.DbException.convert(DbException.java:414)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3292)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:461)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4052)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:175)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:157)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	... 8 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:154)
+	... 9 more
+2023-11-06 16:32:09 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.message.DbException.convert(DbException.java:414)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3292)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:461)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4052)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:117)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:157)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	... 16 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:154)
+	... 17 more
+2023-11-06 16:32:28 database: flush
+org.h2.message.DbException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.message.DbException.convert(DbException.java:414)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3292)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:461)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4052)
+	at org.h2.mvstore.db.Store.<init>(Store.java:129)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:117)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Erreur générale: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]" [50000-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/Sergio/database/bmdb/testdb.mv.db [2.0.206/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:157)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
+	... 16 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:154)
+	... 17 more
+2023-11-06 16:32:33 jdbc[7]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:128)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+org.h2.message.DbException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:287)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La connexion n'a pas été fermée et a été récupérée par le ramasse miette.
+The connection was not closed by the application and is garbage collected [90018-206]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more

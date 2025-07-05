@@ -1,0 +1,20 @@
+---
+ressource:
+
+jobs: 
+	-	name: inspect-app
+		plan:
+		- task: first-task
+			config:
+				platform: linux
+				image_resource:
+					type: docker-image
+					source: {repository: ubuntu}
+				inputs:
+					name: demo-folder
+				outputs:
+					name: compile-app-folder
+				run:
+					path: find
+					args: [.]
+

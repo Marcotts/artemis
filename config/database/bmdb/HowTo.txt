@@ -1,0 +1,10 @@
+CREATE TABLE touslesfilms AS SELECT * FROM CSVREAD('~/database/bmdb/TousLesFilms.csv');
+
+CREATE TABLE serie1 AS SELECT * FROM CSVREAD('~/database/bmdb/Series1.csv');
+CREATE TABLE serie2 AS SELECT * FROM CSVREAD('~/database/bmdb/Series2.csv');
+CREATE TABLE resumes AS SELECT * FROM CSVREAD('~/database/bmdb/Resumes.csv');
+
+
+
+Voir: 
+http://www.h2database.com/html/tutorial.html?highlight=csv&search=csv#firstFound
